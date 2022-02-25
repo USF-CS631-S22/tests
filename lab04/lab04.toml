@@ -1,0 +1,116 @@
+[[tests]]
+name = "01"
+input = ["./lab04", "max3", "1", "3", "2"]
+expected = """
+max3_c(1, 3, 2) = 3
+max3_s(1, 3, 2) = 3
+"""
+rubric = 10
+
+[[tests]]
+name = "02"
+input = ["./lab04", "max3", "-10", "-1", "-20"]
+expected = """
+max3_c(-10, -1, -20) = -1
+max3_s(-10, -1, -20) = -1
+"""
+rubric = 10
+
+[[tests]]
+name = "03"
+input = ["./lab04", "find_max", "5", "1", "2", "5", "3", "4"]
+expected = """
+find_max_c([1,2,5,3,4], 5) = 5
+find_max_s([1,2,5,3,4], 5) = 5
+"""
+rubric = 10
+
+[[tests]]
+name = "04"
+input = ["./lab04", "find_max", "10", "-1", "99", "1", "2", "3", "4", "5", "6", "7", "0"]
+expected = """
+find_max_c([-1,99,1,2,3,4,5,6,7,0], 10) = 99
+find_max_s([-1,99,1,2,3,4,5,6,7,0], 10) = 99
+"""
+rubric = 10
+
+[[tests]]
+name = "05"
+input = ["./lab04", "fib_rec", "6"]
+expected = """
+fib_rec_c(6) = 8
+fib_rec_s(6) = 8
+"""
+rubric = 6
+
+[[tests]]
+name = "06"
+input = ["./lab04", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+"""
+rubric = 7
+
+[[tests]]
+name = "07"
+input = ["./lab04", "fib_rec", "19"]
+expected = """
+fib_rec_c(19) = 4181
+fib_rec_s(19) = 4181
+"""
+rubric = 7
+
+[[tests]]
+name = "08"
+input = ["./lab04", "stolower", "FooBar"]
+expected = """
+stolower_c(FooBar) = foobar
+stolower_s(FooBar) = foobar
+"""
+rubric = 6
+
+[[tests]]
+name = "09"
+input = ["./lab04", "stolower", "ALL UPPER CASE"]
+expected = """
+stolower_c(ALL UPPER CASE) = all upper case
+stolower_s(ALL UPPER CASE) = all upper case
+"""
+rubric = 7
+
+[[tests]]
+name = "10"
+input = ["./lab04", "stolower", "Coffee > $5.00 is too EXPENSIVE"]
+expected = """
+stolower_c(Coffee > $5.00 is too EXPENSIVE) = coffee > $5.00 is too expensive
+stolower_s(Coffee > $5.00 is too EXPENSIVE) = coffee > $5.00 is too expensive
+"""
+rubric = 7
+
+[[tests]]
+name = "11"
+input = ["./lab04", "strncat", "00", "11", "100"]
+expected = """
+strncat_c(00, 11, 100) = 0011
+strncat_s(00, 11, 100) = 0011
+"""
+rubric = 6
+
+[[tests]]
+name = "12"
+input = ["./lab04", "strncat", "foobar", "goobaz", "10"]
+expected = """
+strncat_c(foobar, goobaz, 10) = foobargoobaz
+strncat_s(foobar, goobaz, 10) = foobargoobaz
+"""
+rubric = 7
+
+[[tests]]
+name = "13"
+input = ["./lab04", "strncat", "foobar", "goobaz", "3"]
+expected = """
+strncat_c(foobar, goobaz, 3) = foobargoo
+strncat_s(foobar, goobaz, 3) = foobargoo
+"""
+rubric = 7

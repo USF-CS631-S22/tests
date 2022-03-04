@@ -200,8 +200,8 @@ rubric = 2
 name = "23"
 input = ["./project03", "get_bitseq_signed", "94117", "12", "15"]
 expected = """
-get_bitseq_c(94117, 12, 15) = 6
-get_bitseq_s(94117, 12, 15) = 6
+get_bitseq_signed_c(94117, 12, 15) = 6
+get_bitseq_signed_s(94117, 12, 15) = 6
 """
 rubric = 2
 
@@ -209,7 +209,7 @@ rubric = 2
 name = "24"
 input = ["./project03", "get_bitseq_signed", "94117", "4", "7"]
 expected = """
-get_bitseq_c(94117, 4, 7) = -6
-get_bitseq_s(94117, 4, 7) = -6
+get_bitseq_signed_c(94117, 4, 7) = -6
+get_bitseq_signed_s(94117, 4, 7) = -6
 """
 rubric = 2

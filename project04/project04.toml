@@ -1,0 +1,244 @@
+[[tests]]
+name = "quadratic"
+input = ["./$project", "quadratic", "2", "3", "4", "5"]
+expected = """
+quadratic_c(2, 3, 4, 5) = 25
+quadratic_s(2, 3, 4, 5) = 25
+quadratic_e(2, 3, 4, 5) = 25
+"""
+rubric = 2
+
+[[tests]]
+name = "max3"
+input = ["./$project", "max3", "2", "10", "8"]
+expected = """
+max3_c(2, 10, 8) = 10
+max3_s(2, 10, 8) = 10
+max3_e(2, 10, 8) = 10
+"""
+rubric = 2
+
+[[tests]]
+name = "find_max"
+input = ["./$project", "find_max", "2", "10", "8", "1", "21", "3", "7"]
+expected = """
+find_max_c([2,10,8,1,21,3,7], 7) = 21
+find_max_s([2,10,8,1,21,3,7], 7) = 21
+find_max_e([2,10,8,1,21,3,7], 7) = 21
+"""
+rubric = 4
+
+[[tests]]
+name = "fib_rec"
+input = ["./$project", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+"""
+rubric = 4
+
+[[tests]]
+name = "get_bitseq"
+input = ["./$project", "get_bitseq", "94116", "12", "15"]
+expected = """
+get_bitseq_c(94116, 12, 15) = 6
+get_bitseq_s(94116, 12, 15) = 6
+get_bitseq_e(94116, 12, 15) = 6
+"""
+rubric = 4
+
+[[tests]]
+name = "stolower"
+input = ["./$project", "stolower", "FooBar"]
+expected = """
+stolower_c(FooBar) = foobar
+stolower_s(FooBar) = foobar
+stolower_e(FooBar) = foobar
+"""
+rubric = 2
+
+[[tests]]
+name = "strncat"
+input = ["./$project", "strncat", "University of ", "San Francisco", "100"]
+expected = """
+strncat_c(University of , San Francisco, 100) = University of San Francisco
+strncat_s(University of , San Francisco, 100) = University of San Francisco
+strncat_e(University of , San Francisco, 100) = University of San Francisco
+"""
+rubric = 4
+
+[[tests]]
+name = "matches"
+input = ["./$project", "matches", "xxaaaaxxaaaaxxaaaaxx", "aa"]
+expected = """
+matches_c(xxaaaaxxaaaaxxaaaaxx, aa) = 9
+matches_s(xxaaaaxxaaaaxxaaaaxx, aa) = 9
+matches_e(xxaaaaxxaaaaxxaaaaxx, aa) = 9
+"""
+rubric = 5
+
+[[tests]]
+name = "merge_sort"
+input = ["./$project", "merge_sort", "21", "100", "80", "90", "70", "60", "50", "40", "30", "20", "10", "10", "8", "9", "7", "6", "5", "4", "3", "2", "1", "0"]
+expected = """
+a[] = 21 100 80 90 70 60 50 40 30 20 10 10 8 9 7 6 5 4 3 2 1 0
+aux[] = 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge_sort_c(a, aux, 0, 21)
+a[] = 0 1 2 3 4 5 6 7 8 9 10 10 20 21 30 40 50 60 70 80 90 100
+a[] = 21 100 80 90 70 60 50 40 30 20 10 10 8 9 7 6 5 4 3 2 1 0
+aux[] = 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge_sort_c(a, aux, 0, 21)
+a[] = 0 1 2 3 4 5 6 7 8 9 10 10 20 21 30 40 50 60 70 80 90 100
+a[] = 21 100 80 90 70 60 50 40 30 20 10 10 8 9 7 6 5 4 3 2 1 0
+aux[] = 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge_sort_e(a, aux, 0, 21)
+a[] = 0 1 2 3 4 5 6 7 8 9 10 10 20 21 30 40 50 60 70 80 90 100
+"""
+rubric = 5
+
+[[tests]]
+name = "quadratic_analysis"
+input = ["./$project", "-a", "quadratic", "2", "4", "6", "8"]
+expected = """
+quadratic_c(2, 4, 6, 8) = 36
+quadratic_s(2, 4, 6, 8) = 36
+quadratic_e(2, 4, 6, 8) = 36
+=== Analysis
+I_count       = 6
+DP_count      = 5 (83.33%)
+SDT_count     = 0 (0.00%)
+B_count       = 1 (16.67%)
+B_taken       = 1 (100.00%)
+B_not_taken   = 0 (0.00%)
+"""
+rubric = 3
+
+[[tests]]
+name = "fib_analysis"
+input = ["./$project", "-a", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+=== Analysis
+I_count       = 2119
+DP_count      = 883 (41.67%)
+SDT_count     = 706 (33.32%)
+B_count       = 530 (25.01%)
+B_taken       = 442 (83.40%)
+B_not_taken   = 88 (16.60%)
+"""
+rubric = 3
+
+[[tests]]
+name = "find_max_dm1_128"
+input = ["./$project", "-dm1", "128", "find_max", "2", "10", "8", "1", "21", "3", "7", "4"]
+expected = """
+find_max_c([2,10,8,1,21,3,7,4], 8) = 21
+find_max_s([2,10,8,1,21,3,7,4], 8) = 21
+find_max_e([2,10,8,1,21,3,7,4], 8) = 21
+=== Cache (I)
+Type          = direct mapped block size 1
+Size          = 128 slots
+References    = 57
+Hits          = 45 (78.95% hit ratio)
+Misses        = 12 (21.05% miss ratio)
+Misses (cold) = 12
+Misses (hot)  = 0
+% Used        = 9.38%
+=== Cache (D)
+Type          = direct mapped block size 1
+Size          = 128 slots
+References    = 8
+Hits          = 0 (0.00% hit ratio)
+Misses        = 8 (100.00% miss ratio)
+Misses (cold) = 8
+Misses (hot)  = 0
+% Used        = 6.25%
+"""
+rubric = 4
+
+[[tests]]
+name = "find_max_sa1_128"
+input = ["./$project", "-sa1", "128", "find_max", "2", "10", "8", "1", "21", "3", "7", "4"]
+expected = """
+find_max_c([2,10,8,1,21,3,7,4], 8) = 21
+find_max_s([2,10,8,1,21,3,7,4], 8) = 21
+find_max_e([2,10,8,1,21,3,7,4], 8) = 21
+=== Cache (I)
+Type          = 4-way set associative block size 1
+Size          = 128 slots
+References    = 57
+Hits          = 45 (78.95% hit ratio)
+Misses        = 12 (21.05% miss ratio)
+Misses (cold) = 12
+Misses (hot)  = 0
+% Used        = 9.38%
+=== Cache (D)
+Type          = 4-way set associative block size 1
+Size          = 128 slots
+References    = 8
+Hits          = 0 (0.00% hit ratio)
+Misses        = 8 (100.00% miss ratio)
+Misses (cold) = 8
+Misses (hot)  = 0
+% Used        = 6.25%
+"""
+rubric = 4
+
+[[tests]]
+name = "fib_dm1_16"
+input = ["./$project", "-dm1", "16", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+=== Cache (I)
+Type          = direct mapped block size 1
+Size          = 16 slots
+References    = 2119
+Hits          = 1926 (90.89% hit ratio)
+Misses        = 193 (9.11% miss ratio)
+Misses (cold) = 16
+Misses (hot)  = 177
+% Used        = 100.00%
+=== Cache (D)
+Type          = direct mapped block size 1
+Size          = 16 slots
+References    = 706
+Hits          = 684 (96.88% hit ratio)
+Misses        = 22 (3.12% miss ratio)
+Misses (cold) = 16
+Misses (hot)  = 6
+% Used        = 100.00%
+"""
+rubric = 4
+    
+[[tests]]
+name = "fib_sa1_16"
+input = ["./$project", "-sa1", "16", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+=== Cache (I)
+Type          = 4-way set associative block size 1
+Size          = 16 slots
+References    = 2119
+Hits          = 2036 (96.08% hit ratio)
+Misses        = 83 (3.92% miss ratio)
+Misses (cold) = 16
+Misses (hot)  = 67
+% Used        = 100.00%
+=== Cache (D)
+Type          = 4-way set associative block size 1
+Size          = 16 slots
+References    = 706
+Hits          = 684 (96.88% hit ratio)
+Misses        = 22 (3.12% miss ratio)
+Misses (cold) = 16
+Misses (hot)  = 6
+% Used        = 100.00%
+"""
+rubric = 4

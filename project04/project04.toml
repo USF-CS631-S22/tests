@@ -242,3 +242,115 @@ Misses (hot)  = 6
 % Used        = 100.00%
 """
 rubric = 4
+
+[[tests]]
+name = "find_max_dm4_128"
+input = ["./$project", "-dm4", "128", "find_max", "2", "10", "8", "1", "21", "3", "7", "4"]
+expected = """
+find_max_c([2,10,8,1,21,3,7,4], 8) = 21
+find_max_s([2,10,8,1,21,3,7,4], 8) = 21
+find_max_e([2,10,8,1,21,3,7,4], 8) = 21
+=== Cache (I)
+Type          = direct mapped block size 4
+Size          = 128 slots
+References    = 57
+Hits          = 54 (94.74% hit ratio)
+Misses        = 3 (5.26% miss ratio)
+Misses (cold) = 3
+Misses (hot)  = 0
+% Used        = 2.34%
+=== Cache (D)
+Type          = direct mapped block size 4
+Size          = 128 slots
+References    = 8
+Hits          = 5 (62.50% hit ratio)
+Misses        = 3 (37.50% miss ratio)
+Misses (cold) = 3
+Misses (hot)  = 0
+% Used        = 2.34%
+"""
+rubric = 4
+
+[[tests]]
+name = "find_max_sa4_128"
+input = ["./$project", "-sa4", "128", "find_max", "2", "10", "8", "1", "21", "3", "7", "4"]
+expected = """
+find_max_c([2,10,8,1,21,3,7,4], 8) = 21
+find_max_s([2,10,8,1,21,3,7,4], 8) = 21
+find_max_e([2,10,8,1,21,3,7,4], 8) = 21
+=== Cache (I)
+Type          = 4-way set associative block size 4
+Size          = 128 slots
+References    = 57
+Hits          = 54 (94.74% hit ratio)
+Misses        = 3 (5.26% miss ratio)
+Misses (cold) = 3
+Misses (hot)  = 0
+% Used        = 2.34%
+=== Cache (D)
+Type          = 4-way set associative block size 4
+Size          = 128 slots
+References    = 8
+Hits          = 5 (62.50% hit ratio)
+Misses        = 3 (37.50% miss ratio)
+Misses (cold) = 3
+Misses (hot)  = 0
+% Used        = 2.34%
+"""
+rubric = 4
+
+[[tests]]
+name = "fib_dm4_64"
+input = ["./$project", "-dm4", "64", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+=== Cache (I)
+Type          = direct mapped block size 4
+Size          = 64 slots
+References    = 2119
+Hits          = 2114 (99.76% hit ratio)
+Misses        = 5 (0.24% miss ratio)
+Misses (cold) = 5
+Misses (hot)  = 0
+% Used        = 7.81%
+=== Cache (D)
+Type          = direct mapped block size 4
+Size          = 64 slots
+References    = 706
+Hits          = 701 (99.29% hit ratio)
+Misses        = 5 (0.71% miss ratio)
+Misses (cold) = 5
+Misses (hot)  = 0
+% Used        = 7.81%
+"""
+rubric = 4
+    
+[[tests]]
+name = "fib_sa4_16"
+input = ["./$project", "-sa4", "64", "fib_rec", "10"]
+expected = """
+fib_rec_c(10) = 55
+fib_rec_s(10) = 55
+fib_rec_e(10) = 55
+=== Cache (I)
+Type          = 4-way set associative block size 4
+Size          = 64 slots
+References    = 2119
+Hits          = 2114 (99.76% hit ratio)
+Misses        = 5 (0.24% miss ratio)
+Misses (cold) = 5
+Misses (hot)  = 0
+% Used        = 7.81%
+=== Cache (D)
+Type          = 4-way set associative block size 4
+Size          = 64 slots
+References    = 706
+Hits          = 701 (99.29% hit ratio)
+Misses        = 5 (0.71% miss ratio)
+Misses (cold) = 5
+Misses (hot)  = 0
+% Used        = 7.81%
+"""
+rubric = 4

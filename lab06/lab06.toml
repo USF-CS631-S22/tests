@@ -10,20 +10,30 @@ input = ["java", "-cp", "$digital", "CLI", "test", "max2.dig", "-tests", "$proje
 expected = """
 max2_test: passed
 """
-rubric = 35
+rubric = 25 
 
 [[tests]]
-name = "1-bit-full-adder"
-input = ["java", "-cp", "$digital", "CLI", "test", "1-bit-full-adder.dig", "-tests", "$project_tests/1bfa_test.dig"]
+name = "1_bit_full_adder"
+input = ["java", "-cp", "$digital", "CLI", "test", "1_bit_full_adder.dig", "-tests", "$project_tests/1bfa_test.dig"]
 expected = """
 1bfa_test: passed
 """
-rubric = 30
+rubric = 25
 
 [[tests]]
-name = "8-bit-ripple-carry-adder"
-input = ["java", "-cp", "$digital", "CLI", "test", "8-bit-ripple-carry-adder.dig", "-tests", "$project_tests/8brca_test.dig"]
+name = "8_bit_ripple_carry_adder"
+input = ["java", "-cp", "$digital", "CLI", "test", "8_bit_ripple_carry_adder.dig", "-tests", "$project_tests/8brca_test.dig"]
 expected = """
 8brca_test: passed
 """
-rubric = 35
+rubric = 25
+
+
+[[tests]]
+name = "8_bit_counter"
+input = ["java", "-cp", "$digital", "CLI", "test", "8_bit_counter.dig", "-tests", "$project_tests/8bc_test.dig"]
+expected = """
+8bc_test: passed
+"""
+rubric = 25
+

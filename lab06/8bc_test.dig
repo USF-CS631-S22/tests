@@ -8,18 +8,23 @@
       <elementAttributes>
         <entry>
           <string>Label</string>
-          <string>part1-test</string>
+          <string>8bc_test</string>
         </entry>
         <entry>
           <string>Testdata</string>
           <testData>
-            <dataString>CLK CLR R0 R2
-0   1   x  x
-0   0   x  x
-while (!(DONE))
-C   0  	x  x
-end while
-0   0   x  3</dataString>
+            <dataString>CLK CLR COUNT
+0   1   x
+0   0   0
+1   0   1
+0   0   1
+1   0   2
+0   0   2
+1   0   3
+0   0   3
+1   0   4
+0   0   4
+</dataString>
           </testData>
         </entry>
       </elementAttributes>

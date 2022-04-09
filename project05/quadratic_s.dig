@@ -13,12 +13,12 @@
         <entry>
           <string>Testdata</string>
           <testData>
-            <dataString>CLR CLK PROG DP MEM BR MUL BX ICOUNT
-1   x   x    x  x   x  x   x  x
+            <dataString>CLR CLK PROG DP MEM B BCC BL  MUL BX ICOUNT
+1   x   x    x  x   x  x   x  x x x
 while (!(DONE))
-0 C 0 x x x x x x
+0 C 0 x x x x x x x x
 end while
-0 0 x 2 0 0 3 1 6
+0 0 x 2 0 0 0 0 3 1 6
 </dataString>
           </testData>
         </entry>
